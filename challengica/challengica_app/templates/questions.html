@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        <title>Questions</title>
+    </head>
+    <body>
+        <div id="meme_p" style="position:fixed;top:0">
+            <h1>Correct Answer</h1>
+            <img src="/static/memes/meme_p_{{ meme_no }}.jpeg" height="50%" width="auto">
+            <button onclick="showquest()">Show question</button>
+        </div>
+        <div id="ques" style="position:fixed;top:0">
+            <h1>Question no. {{ q_no }}</h1>
+            <img src="/static/questions/{{ ques_text }}.jpeg">
+        </div>
+        <script>
+            meme = document.getElementById("meme_p");
+            ques = document.getElementById("ques");
+            ques.style.visibility = "hidden";
+            function showquest(){
+                meme.style.visibility = "hidden";
+                ques.style.visibility = "visible";
+            }
+        </script>
+    </body>
+</html>

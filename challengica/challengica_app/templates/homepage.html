@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+    <head>
+        <title>Challengica</title>
+    </head>
+    <body>
+        <h1>Welcome to Challengica</h1>
+        <p>Please read the rules before you proceed further</p>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </body>
+</html>
