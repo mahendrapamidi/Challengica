@@ -39,9 +39,10 @@ def generateques(request, set_no, ans):
     try:
         qs = Question.objects.get(setno = set_no, ans_text = ans)
         q_no = qs.ques_img[3]
+        ques_img = qs.ques_img
         ques_text = qs.ques_text
         meme_no = randint(1,5)
     except Question.DoesNotExist:
         meme_no = randint(1,9)
         return render(request, 'notfound.html', {'meme_no':meme_no})
-    return render(request, 'questions.html', {'q_no':q_no, 'ques_text':ques_text, 'meme_no':meme_no})
+    return render(request, 'questions.html', {'q_no':q_no, 'ques_img':ques_img, 'ques_text':ques_text, 'meme_no':meme_no})

@@ -3,15 +3,17 @@
     <head>
         <title>Questions</title>
     </head>
-    <body>
+    <body style="overflow:visible">
         <div id="meme_p" style="position:fixed;top:0">
             <h1>Correct Answer</h1>
-            <img src="/static/memes/meme_p_{{ meme_no }}.jpeg" height="50%" width="auto">
+            <img src="/static/memes/meme_p_{{ meme_no }}.jpg" height="50%" width="auto">
             <button onclick="showquest()">Show question</button>
         </div>
         <div id="ques" style="position:fixed;top:0">
             <h1>Question no. {{ q_no }}</h1>
-            <img src="/static/questions/{{ ques_text }}.jpeg">
+            <p style="color:black;font-size:150%;">{{ ques_text }}</p>
+            <img src="/static/questions/{{ ques_img }}.jpg" height="50%" width="auto">
+            
         </div>
         <script>
             meme = document.getElementById("meme_p");
@@ -20,6 +22,14 @@
             function showquest(){
                 meme.style.visibility = "hidden";
                 ques.style.visibility = "visible";
+            }
+            var qno = "{{ q_no }}";
+            if(qno == '0'){
+               showquest();
+            }
+            if(qno == '6'){
+                document.body.style.backgroundColor = "black";
+
             }
         </script>
     </body>
