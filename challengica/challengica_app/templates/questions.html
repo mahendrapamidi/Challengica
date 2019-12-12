@@ -13,12 +13,12 @@
     <body style="overflow-y:visible">
         <div id="meme_p" style="position:absolute;top:0">
             <h1>Correct Answer</h1>
-            <img src="/static/memes/meme_p_{{ meme_no }}.jpg" height="100%" style="max-width:100%">
+            <img src="/static/memes/meme_p_{{ meme_no }}.jpg" height="auto" style="max-width:100%">
             <button onclick="showquest()">Show question</button>
         </div>
         <div id="ques" style="position:absolute;top:0">
             <h1>Question no. {{ q_no }}</h1>
-            <img src="/static/questions/{{ ques_img }}.jpg" height="100%" style="max-width:100%">
+            <img src="/static/questions/{{ ques_img }}.jpg" height="auto" style="max-width:100%">
             <p id="qtext" style="color:black;font-size:150%;">{{ ques_text }}</p>
         </div>
         <script>
